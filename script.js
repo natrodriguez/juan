@@ -6,7 +6,6 @@
     document.querySelectorAll('[data-es][data-en]').forEach(el => { el.textContent = el.dataset[chosen]; });
     document.querySelectorAll('[data-alt-es]').forEach(el => { el.alt = el.getAttribute('data-alt-' + chosen); });
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === chosen)));
-    document.querySelector('nav').setAttribute('aria-label', chosen === 'es' ? 'Principal' : 'Main');
     document.querySelector('.video iframe').title = 'El Pipo y La Piña — ' + (chosen === 'es' ? 'video musical' : 'music video');
     document.title = chosen === 'es' ? 'Juan — Música & Libros' : 'Juan — Music & Books';
     try { localStorage.setItem('juan-language', chosen); } catch {}
